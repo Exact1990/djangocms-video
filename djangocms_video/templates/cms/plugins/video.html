@@ -1,6 +1,5 @@
 {% load i18n sekizai_tags cms_js_tags %}
-<video id="MY_VIDEO_1" class="video-js vjs-default-skin" controls
- preload="auto" width="{{ object.get_width }}" height="{{ object.get_height }}" poster="{% if object.image %}{{ object.image.url }}{% endif %}"
+<video controls preload="auto" width="{{ object.get_width }}" height="{{ object.get_height }}" poster="{% if object.image %}{{ object.image.url }}{% endif %}"
  data-setup="{}" {% if object.auto_play %}autoplay{% endif %} {% if object.loop %}loop{% endif %}>
  <source src="{{ object.get_movie }}" type='video/mp4'>
  <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
