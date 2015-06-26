@@ -38,6 +38,51 @@ class Video(CMSPlugin):
 
     loop = models.BooleanField(_('loop'), default=settings.VIDEO_LOOP)
 
+    auto_hide = models.BooleanField(
+        _('auto hide'), default=settings.VIDEO_AUTOHIDE)
+
+    fullscreen = models.BooleanField(
+        _('fullscreen'), default=settings.VIDEO_FULLSCREEN)
+
+
+    # plugin settings
+    bgcolor = models.CharField(
+        _('background color'), max_length=6, default=settings.VIDEO_BG_COLOR,
+        help_text=_('Hexadecimal, eg ff00cc'))
+
+    textcolor = models.CharField(
+        _('text color'), max_length=6, default=settings.VIDEO_TEXT_COLOR,
+        help_text=_('Hexadecimal, eg ff00cc'))
+
+    seekbarcolor = models.CharField(
+        _('seekbar color'), max_length=6, default=settings.VIDEO_SEEKBAR_COLOR,
+        help_text=_('Hexadecimal, eg ff00cc'))
+
+    seekbarbgcolor = models.CharField(
+        _('seekbar bg color'), max_length=6,
+        default=settings.VIDEO_SEEKBARBG_COLOR,
+        help_text=_('Hexadecimal, eg ff00cc'))
+
+    loadingbarcolor = models.CharField(
+        _('loadingbar color'), max_length=6,
+        default=settings.VIDEO_LOADINGBAR_COLOR,
+        help_text=_('Hexadecimal, eg ff00cc'))
+
+    buttonoutcolor = models.CharField(
+        _('button out color'), max_length=6,
+        default=settings.VIDEO_BUTTON_OUT_COLOR,
+        help_text=_('Hexadecimal, eg ff00cc'))
+
+    buttonovercolor = models.CharField(
+        _('button over color'), max_length=6,
+        default=settings.VIDEO_BUTTON_OVER_COLOR,
+        help_text=_('Hexadecimal, eg ff00cc'))
+
+    buttonhighlightcolor = models.CharField(
+        _('button highlight color'), max_length=6,
+        default=settings.VIDEO_BUTTON_HIGHLIGHT_COLOR,
+        help_text=_('Hexadecimal, eg ff00cc'))
+
     def __str__(self):
         if self.movie:
             name = self.movie.path
